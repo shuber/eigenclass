@@ -6,11 +6,11 @@ module Huberry
     # Example
     #
     #   class User
-    #     cattr_accessor :testing
+    #     eattr_accessor :testing
     #   end
     #
     #   User.testing = true
-    def cattr_accessor(*attrs)
+    def eattr_accessor(*attrs)
       eigenclass_eval { attr_accessor *attrs }
     end
     
@@ -20,12 +20,12 @@ module Huberry
     # Example
     #
     #   class User
-    #     cattr_reader :testing
+    #     eattr_reader :testing
     #     @testing = true
     #   end
     #
     #   User.testing # returns true
-    def cattr_reader(*attrs)
+    def eattr_reader(*attrs)
       eigenclass_eval { attr_reader *attrs }
     end
     
@@ -35,11 +35,11 @@ module Huberry
     # Example
     #
     #   class User
-    #     cattr_writer :testing
+    #     eattr_writer :testing
     #   end
     #
     #   User.testing = true
-    def cattr_writer(*attrs)
+    def eattr_writer(*attrs)
       eigenclass_eval { attr_writer *attrs }
     end
     

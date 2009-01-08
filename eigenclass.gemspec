@@ -1,6 +1,6 @@
 Gem::Specification.new do |s| 
   s.name    = 'eigenclass'
-  s.version = '1.0.0'
+  s.version = '1.0.1'
   s.date    = '2009-01-07'
   
   s.summary     = "Utility methods for modifying a ruby object's eigenclass/metaclass"

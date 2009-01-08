@@ -16,9 +16,9 @@ Usage
 This gem allows you to define class level accessors, readers, and writers
 
 	class SomeClass
-	  cattr_accessor :test_accessor
-	  cattr_reader :test_reader
-	  cattr_writer :test_writer
+	  eattr_accessor :test_accessor
+	  eattr_reader :test_reader
+	  eattr_writer :test_writer
 	end
 	
 	SomeClass.test_accessor = 'testing'

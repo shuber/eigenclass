@@ -62,7 +62,7 @@ class EigenclassTest < Test::Unit::TestCase
   
   def test_cattr_accessor
     assert !TestClass.respond_to?(:this_is_a_test)
-    TestClass.cattr_accessor :this_is_a_test
+    TestClass.eattr_accessor :this_is_a_test
     assert TestClass.respond_to?(:this_is_a_test)
     assert TestClass.this_is_a_test.nil?
     TestClass.this_is_a_test = true
@@ -71,7 +71,7 @@ class EigenclassTest < Test::Unit::TestCase
   
   def test_cattr_reader
     assert !TestClass.respond_to?(:this_is_another_test)
-    TestClass.cattr_reader :this_is_another_test
+    TestClass.eattr_reader :this_is_another_test
     assert TestClass.respond_to?(:this_is_another_test)
     assert TestClass.this_is_another_test.nil?
     TestClass.instance_variable_set('@this_is_another_test', true)
@@ -80,7 +80,7 @@ class EigenclassTest < Test::Unit::TestCase
   
   def test_cattr_writer
     assert !TestClass.respond_to?(:this_is_yet_another_test=)
-    TestClass.cattr_writer :this_is_yet_another_test
+    TestClass.eattr_writer :this_is_yet_another_test
     assert TestClass.respond_to?(:this_is_yet_another_test=)
     assert TestClass.instance_variable_get('@this_is_yet_another_test').nil?
     TestClass.this_is_yet_another_test = true
