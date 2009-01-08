@@ -1,4 +1,4 @@
-Gem::Specification.new do |s|
+Gem::Specification.new do |s| 
   s.name    = 'eigenclass'
   s.version = '1.0.0'
   s.date    = '2009-01-07'
