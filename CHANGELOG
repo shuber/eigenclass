@@ -1,6 +1,0 @@
-2009-01-07 - Sean Huber (shuber@huberry.com)
-  * Initial commit
-  * Update README
-  * Add gemspec
-  * Update gemspec to force github to rebuild gem
-  * Rename cattr_* methods to eattr_* to avoid confusion and conflict with ActiveSupport's version
