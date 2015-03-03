@@ -1,4 +1,15 @@
+require 'delegate'
+
 module Eigenclass
+  extend Forwardable
+
+  # Returns an object's eigenclass
+  def eigenclass
+    class << self
+      self
+    end
+  end
+
   # Uses <tt>eigenclass_eval</tt> to define attr_accessors in an object's <tt>eigenclass</tt>
   # which can be called like a class methods
   #
@@ -9,9 +20,7 @@ module Eigenclass
   #   end
   #
   #   User.testing = true
-  def eattr_accessor(*attrs)
-    eigenclass_eval { attr_accessor *attrs }
-  end
+  def_delegator :eigenclass, :attr_accessor, :eattr_accessor
   
   # Uses <tt>eigenclass_eval</tt> to define attr_readers in an object's <tt>eigenclass</tt>
   # which can be called like a class methods
@@ -23,10 +32,8 @@ module Eigenclass
   #     @testing = true
   #   end
   #
-  #   User.testing # returns true
-  def eattr_reader(*attrs)
-    eigenclass_eval { attr_reader *attrs }
-  end
+  #   User.testing #=> true
+  def_delegator :eigenclass, :attr_reader, :eattr_reader
   
   # Uses <tt>eigenclass_eval</tt> to define attr_writers in an object's <tt>eigenclass</tt>
   # which can be called like a class methods
@@ -38,9 +45,7 @@ module Eigenclass
   #   end
   #
   #   User.testing = true
-  def eattr_writer(*attrs)
-    eigenclass_eval { attr_writer *attrs }
-  end
+  def_delegator :eigenclass, :attr_writer, :eattr_writer
   
   # Uses <tt>eigenclass_eval</tt> to define a method in an object's <tt>eigenclass</tt>
   # which can be called like a class method
@@ -48,20 +53,13 @@ module Eigenclass
   # Example
   #
   #   User.class_eval do
-  #     define_class_method 'testing' do
+  #     define_class_method('testing') do
   #       'test'
   #     end
   #   end
   #
-  #   User.testing # returns 'test'
-  def define_class_method(name, &block)
-    eigenclass_eval { define_method name, &block }
-  end
-  
-  # Returns an object's eigenclass
-  def eigenclass
-    class << self; self; end
-  end
+  #   User.testing #=> 'test'
+  def_delegator :eigenclass, :define_method, :define_class_method
   
   # Accepts a block to evaluate inside the scope of an object's <tt>eigenclass</tt>
   #
@@ -69,9 +67,7 @@ module Eigenclass
   #
   #   User.eigenclass_eval { attr_accessor :testing }
   #   User.testing = true
-  def eigenclass_eval(&block)
-    eigenclass.instance_eval &block
-  end
+  def_delegator :eigenclass, :instance_eval, :eigenclass_eval
 end
 
-Object.send :include, Eigenclass
+Object.send(:include, Eigenclass)
