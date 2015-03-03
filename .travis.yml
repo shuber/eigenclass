@@ -2,7 +2,7 @@ rvm:
   - 1.9.2
   - 2.0.0
   - ruby-head
-script: bundle exec rake
+script: bundle exec rspec
 addons:
   code_climate:
     repo_token: 6e85e0e345260307d97927e8eee7f52e2cec36c021b792a30bf7ffb9a6f8eea8

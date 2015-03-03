@@ -47,7 +47,7 @@ A reference to any object's eigenclass can be accessed by calling.
 
 == Testing
 
-  bundle exec rake
+  bundle exec rspec
 
 
 == Contributing
