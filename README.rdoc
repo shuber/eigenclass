@@ -4,12 +4,14 @@ Eigenclasses (aka metaclasses or singleton classes) in ruby.
 
 Check out the implementations for {metaclasses}[http://en.wikipedia.org/wiki/Metaclass] in other languages for more examples.
 
-
 == Installation
 
   gem install eigenclass
 
-Supported Ruby versions: 1.9.3+
+
+== Requirements
+
+Ruby 1.9.3+
 
 
 == Usage
