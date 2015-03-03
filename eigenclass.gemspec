@@ -5,8 +5,8 @@ Gem::Specification.new do |s|
   s.version = Eigenclass::VERSION
   s.date    = '2010-01-28'
   
-  s.summary     = "Utility methods for modifying a ruby object's eigenclass/metaclass"
-  s.description = "Utility methods for modifying a ruby object's eigenclass/metaclass"
+  s.summary     = 'Eigenclasses in ruby'
+  s.description = 'Eigenclasses (aka metaclasses or singleton classes) in ruby'
   
   s.author   = 'Sean Huber'
   s.email    = 'github@shuber.io'
