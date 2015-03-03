@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
     test/eigenclass_test.rb
   )
 
+  s.add_development_dependency 'codeclimate-test-reporter'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rdoc'
 end
