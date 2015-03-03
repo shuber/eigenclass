@@ -1,0 +1,5 @@
+rvm:
+  - 1.9.2
+  - 2.0.0
+  - ruby-head
+script: bundle exec rake
