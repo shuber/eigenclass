@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   
   s.author   = 'Sean Huber'
   s.email    = 'github@shuber.io'
-  s.homepage = 'http://github.com/shuber/eigenclass'
+  s.homepage = 'https://github.com/shuber/eigenclass'
   
   s.has_rdoc = false
   s.rdoc_options = ['--line-numbers', '--inline-source', '--main', 'README.rdoc']
