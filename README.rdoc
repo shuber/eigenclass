@@ -1,4 +1,4 @@
-= eigenclass
+= eigenclass - {<img src="https://secure.travis-ci.org/shuber/eigenclass.png"/>}[http://travis-ci.org/shuber/eigenclass] {<img src="https://codeclimate.com/github/shuber/eigenclass/badges/gpa.svg" />}[https://codeclimate.com/github/shuber/eigenclass] {<img src="https://codeclimate.com/github/shuber/eigenclass/badges/coverage.svg" />}[https://codeclimate.com/github/shuber/eigenclass]
 
 Eigenclasses (aka metaclasses or singleton classes) in ruby.
 
