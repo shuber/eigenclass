@@ -1,6 +1,8 @@
+require File.expand_path('../lib/eigenclass/version', __FILE__)
+
 Gem::Specification.new do |s| 
   s.name    = 'eigenclass'
-  s.version = '1.1.1'
+  s.version = Eigenclass::VERSION
   s.date    = '2010-01-28'
   
   s.summary     = "Utility methods for modifying a ruby object's eigenclass/metaclass"
