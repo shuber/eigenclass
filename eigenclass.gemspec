@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   
   s.files = %w(
     lib/eigenclass.rb
-    MIT-LICENSE
+    LICENSE
     Rakefile
     README.rdoc
     test/eigenclass_test.rb
