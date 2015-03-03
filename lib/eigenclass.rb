@@ -1,4 +1,5 @@
 require 'delegate'
+require 'eigenclass/version'
 
 module Eigenclass
   extend Forwardable
