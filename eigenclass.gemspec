@@ -26,4 +26,7 @@ Gem::Specification.new do |s|
   s.test_files = %w(
     test/eigenclass_test.rb
   )
+
+  s.add_development_dependency 'rake'
+  s.add_development_dependency 'rdoc'
 end

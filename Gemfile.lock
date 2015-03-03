@@ -6,9 +6,13 @@ PATH
 GEM
   remote: https://www.rubygems.org/
   specs:
+    rake (10.1.0)
+    rdoc (4.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   eigenclass!
+  rake
+  rdoc
