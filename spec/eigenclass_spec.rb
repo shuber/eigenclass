@@ -37,4 +37,16 @@ RSpec.describe Eigenclass do
       expect(subject.class.new).not_to expectation
     end
   end
+
+  describe '#eigenclass_exec' do
+    it 'should evaluate in the eigenclass scope' do
+      expectation = be_respond_to(:test)
+
+      expect(subject).not_to expectation
+      subject.eigenclass_exec(:test) { |name| attr_reader name }
+      expect(subject).to expectation
+
+      expect(subject.class.new).not_to expectation
+    end
+  end
 end

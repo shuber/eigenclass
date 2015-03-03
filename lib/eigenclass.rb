@@ -9,6 +9,7 @@ module Eigenclass
   def_delegator :eigenclass, :attr_writer, :eattr_writer
   def_delegator :eigenclass, :define_method, :define_class_method
   def_delegator :eigenclass, :instance_eval, :eigenclass_eval
+  def_delegator :eigenclass, :instance_exec, :eigenclass_exec
 
   def eigenclass
     class << self
