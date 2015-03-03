@@ -15,7 +15,7 @@ RSpec.describe Eigenclass do
               .to(:eigenclass)
               .as(:attr_writer) }
 
-  it { should delegate_method(:define_class_method)
+  it { should delegate_method(:edefine_method)
               .to(:eigenclass)
               .as(:define_method) }
 
