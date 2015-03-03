@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.description = "Utility methods for modifying a ruby object's eigenclass/metaclass"
   
   s.author   = 'Sean Huber'
-  s.email    = 'shuber@huberry.com'
+  s.email    = 'github@shuber.io'
   s.homepage = 'http://github.com/shuber/eigenclass'
   
   s.has_rdoc = false
