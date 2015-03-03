@@ -1,0 +1,14 @@
+PATH
+  remote: .
+  specs:
+    eigenclass (1.1.1)
+
+GEM
+  remote: https://www.rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  eigenclass!
