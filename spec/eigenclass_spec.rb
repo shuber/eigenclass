@@ -28,9 +28,13 @@ RSpec.describe Eigenclass do
 
   describe '#eigenclass_eval' do
     it 'should evaluate in the eigenclass scope' do
-      expect(subject).not_to be_respond_to(:test)
+      expectation = be_respond_to(:test)
+
+      expect(subject).not_to expectation
       subject.eigenclass_eval { attr_reader :test }
-      expect(subject).to be_respond_to(:test)
+      expect(subject).to expectation
+
+      expect(subject.class.new).not_to expectation
     end
   end
 end
