@@ -9,6 +9,8 @@ Check out the implementations for {metaclasses}[http://en.wikipedia.org/wiki/Met
 
   gem install eigenclass
 
+Supported Ruby versions: 1.9.3+
+
 
 == Usage
 
