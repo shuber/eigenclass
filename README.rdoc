@@ -23,12 +23,12 @@ This gem allows you to define class level accessors, readers, and writers
 You can also dynamically create class methods
 
   SomeClass.class_eval do
-    define_class_method 'test_class_method' do
+    define_class_method('test_class_method') do
       'test'
     end
   end
   
-  SomeClass.test_class_method # returns 'test'
+  SomeClass.test_class_method #=> 'test'
 
 You can even evaluate a block of code inside the scope of an object's eigenclass
 
@@ -38,24 +38,20 @@ You can even evaluate a block of code inside the scope of an object's eigenclass
   
   SomeClass.test_eigenclass_eval = true
 
-
 A reference to any object's eigenclass can be accessed by calling
 
   SomeObject.eigenclass
 
 
-== Note on Patches/Pull Requests
+== Testing
+
+  bundle exec rake
+
+
+== Contributing
 
 * Fork the project.
 * Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but
-   bump version in a commit by itself I can ignore when I pull)
+* Add tests for it. This is important so I don't break it in a future version unintentionally.
+* Commit, do not mess with Rakefile, version, or history. (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
-
-
-== Contact
-
-Problems, comments, and suggestions all welcome: shuber@huberry.com
