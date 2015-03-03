@@ -1,0 +1,36 @@
+require_relative '../lib/eigenclass'
+
+RSpec.describe Eigenclass do
+  subject { Object.new.extend(described_class) }
+
+  it { should delegate_method(:eattr_accessor)
+              .to(:eigenclass)
+              .as(:attr_accessor) }
+
+  it { should delegate_method(:eattr_reader)
+              .to(:eigenclass)
+              .as(:attr_reader) }
+
+  it { should delegate_method(:eattr_writer)
+              .to(:eigenclass)
+              .as(:attr_writer) }
+
+  it { should delegate_method(:define_class_method)
+              .to(:eigenclass)
+              .as(:define_method) }
+
+  describe '#eigenclass' do
+    it 'should return the eigenclass instance' do
+      expected = class << subject; self end
+      expect(subject.eigenclass).to eq(expected)
+    end
+  end
+
+  describe '#eigenclass_eval' do
+    it 'should evaluate in the eigenclass scope' do
+      expect(subject).not_to be_respond_to(:test)
+      subject.eigenclass_eval { attr_reader :test }
+      expect(subject).to be_respond_to(:test)
+    end
+  end
+end
