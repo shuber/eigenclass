@@ -17,7 +17,9 @@ Check out the implementations for {metaclasses}[http://en.wikipedia.org/wiki/Met
 
 == Usage
 
-Everything in Ruby is an object. Every object has an <tt>eigenclass</tt>.
+Everything in Ruby is an object.
+
+Every object has an <tt>eigenclass</tt>.
 
   SomeObject.eigenclass #=> #<Class:#<SomeObject:0x007f9611030300>>
 
@@ -31,7 +33,7 @@ The implementation of the <tt>eigenclass</tt> method is pretty simple.
     end
   end
 
-Evaluating code within the context of an object's <tt>eigenclass</tt> allows us to do some pretty cool things, like define a class level attribute accessor.
+Evaluating code within the context of an object's <tt>eigenclass</tt> allows us to do some pretty cool things like defining class level attributes.
 
   SomeObject.eigenclass_eval do
     attr_accessor :testing
@@ -40,7 +42,7 @@ Evaluating code within the context of an object's <tt>eigenclass</tt> allows us 
   SomeObject.testing = :example
   SomeObject.testing #=> :example
 
-This gem provides some convenience methods for defining class level methods.
+The convenience methods for defining class level methods makes this even easier.
 
   class SomeObject
     eattr_accessor :test_accessor
@@ -54,7 +56,24 @@ This gem provides some convenience methods for defining class level methods.
 
   SomeObject.test_class_method #=> :test_define
 
-You can also use the <tt>eigenclass_exec</tt> method if you need to evaluate code in an object's <tt>eigenclass</tt> with some additional arguments. Check out the {BasicObject#instance_exec}[http://ruby-doc.org/core-1.9.3/BasicObject.html#method-i-instance_exec] documentation for examples.
+Since all objects have an <tt>eigenclass</tt>, we can even define methods on individual _instances_ of a class.
+
+  object = SomeObject.new
+  object.eattr_accessor :example
+  object.example = "cool"
+  object.example #=> cool
+
+  other_object = SomeObject.new
+  other_object.example #=> NoMethodError undefined method `example' for #<SomeObject:0x007fee348dde00>
+
+This is pretty incredible. Not only can behavior be injected into _all objects_ in a program, it can even be inject into _individual object instances_, all *at runtime*!
+
+The Ruby language is like one giant plugin framework with an awesome standard library.
+
+== API
+
+* {eigenclass_eval}[http://ruby-doc.org/core-1.9.3/BasicObject.html#method-i-instance_eval]
+* {eigenclass_exec}[http://ruby-doc.org/core-1.9.3/BasicObject.html#method-i-instance_exec]
 
 
 == Testing
