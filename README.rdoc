@@ -17,7 +17,10 @@ Check out the implementations for {metaclasses}[http://en.wikipedia.org/wiki/Met
 
 == Usage
 
-Everything in Ruby is an object.
+Everything in Ruby is an object, including classes.
+
+  class SomeObject
+  end
 
 Every object has an <tt>eigenclass</tt>.
 
@@ -66,12 +69,15 @@ Since all objects have an <tt>eigenclass</tt>, we can even define methods on ind
   other_object = SomeObject.new
   other_object.example #=> NoMethodError undefined method `example' for #<SomeObject:0x007fee348dde00>
 
-This is pretty incredible. Not only can behavior be injected into _all objects_ in a program, it can even be inject into _individual object instances_, all *at runtime*!
+This is pretty incredible. Ruby is like one giant plugin framework with an awesome standard library!
 
-The Ruby language is like one giant plugin framework with an awesome standard library.
 
 == API
 
+* {eattr_accessor}[http://ruby-doc.org/core-1.9.3/Module.html#method-i-attr_accessor]
+* {eattr_reader}[http://ruby-doc.org/core-1.9.3/Module.html#method-i-attr_reader]
+* {eattr_writer}[http://ruby-doc.org/core-1.9.3/Module.html#method-i-attr_writer]
+* {edefine_method}[http://ruby-doc.org/core-1.9.3/Module.html#method-i-define_method]
 * {eigenclass_eval}[http://ruby-doc.org/core-1.9.3/BasicObject.html#method-i-instance_eval]
 * {eigenclass_exec}[http://ruby-doc.org/core-1.9.3/BasicObject.html#method-i-instance_exec]
 
