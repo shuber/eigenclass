@@ -38,7 +38,7 @@ Evaluating code within the context of an object's <tt>eigenclass</tt> allows us 
   end
 
   SomeObject.testing = :example
-  puts SomeObject.testing.inspect #=> :example
+  SomeObject.testing #=> :example
 
 This gem provides some convenience methods for defining class level methods.
 
