@@ -17,37 +17,44 @@ Check out the implementations for {metaclasses}[http://en.wikipedia.org/wiki/Met
 
 == Usage
 
-This gem allows you to define class level accessors, readers, and writers.
+Everything in Ruby is an object. Every object has an <tt>eigenclass</tt>.
 
-  class SomeClass
+  SomeObject.eigenclass #=> #<Class:#<SomeObject:0x007f9611030300>>
+
+The implementation of the <tt>eigenclass</tt> method is pretty simple.
+
+  class Object
+    def eigenclass
+      class << self
+        self
+      end
+    end
+  end
+
+Evaluating code within the context of an object's <tt>eigenclass</tt> allows us to do some pretty cool things, like define a class level attribute accessor.
+
+  SomeObject.eigenclass_eval do
+    attr_accessor :testing
+  end
+
+  SomeObject.testing = :example
+  puts SomeObject.testing.inspect #=> :example
+
+This gem provides some convenience methods for defining class level methods.
+
+  class SomeObject
     eattr_accessor :test_accessor
     eattr_reader :test_reader
     eattr_writer :test_writer
-  end
-  
-  SomeClass.test_accessor = 'testing'
 
-You can also dynamically create class methods.
-
-  SomeClass.class_eval do
     edefine_method(:test_class_method) do
-      :test
+      :test_define
     end
   end
-  
-  SomeClass.test_class_method #=> :test
 
-You can even evaluate a block of code inside the scope of an object's eigenclass with <tt>eigenclass_eval</tt> and <tt>eigenclass_exec</tt>.
+  SomeObject.test_class_method #=> :test_define
 
-  SomeClass.eigenclass_eval do
-    attr_accessor :test_eigenclass_eval
-  end
-  
-  SomeClass.test_eigenclass_eval = true
-
-A reference to any object's eigenclass can be accessed by calling.
-
-  SomeObject.eigenclass
+You can also use the <tt>eigenclass_exec</tt> method if you need to evaluate code in an object's <tt>eigenclass</tt> with some additional arguments. Check out the {BasicObject#instance_exec}[http://ruby-doc.org/core-1.9.3/BasicObject.html#method-i-instance_exec] documentation for examples.
 
 
 == Testing
