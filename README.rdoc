@@ -4,14 +4,15 @@ Eigenclasses (aka metaclasses or singleton classes) in ruby.
 
 Check out the implementations for {metaclasses}[http://en.wikipedia.org/wiki/Metaclass] in other languages for more examples.
 
+*Note*: This gem was originally written back in 2009. Since then, Ruby has introduced a couple new methods which provide the same functionality as this gem's <tt>eigenclass</tt> and <tt>edefine_method</tt> methods.
+
+* {Object#singleton_class}[http://ruby-doc.org/core-1.9.2/Object.html#method-i-singleton_class]
+* {Object#define_singleton_method}[http://ruby-doc.org/core-1.9.2/Object.html#method-i-define_singleton_method]
+
+
 == Installation
 
   gem install eigenclass
-
-
-== Requirements
-
-Ruby 1.9.3+
 
 
 == Usage
