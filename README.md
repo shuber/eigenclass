@@ -9,7 +9,7 @@ Check out the [metaclass] implementations in other languages for more examples.
 * [Object#singleton_class]
 * [Object#define_singleton_method]
 
-[metaclasses]: http://en.wikipedia.org/wiki/Metaclass
+[metaclass]: http://en.wikipedia.org/wiki/Metaclass
 [Object#singleton_class]: http://ruby-doc.org/core-1.9.2/Object.html#method-i-singleton_class
 [Object#define_singleton_method]: http://ruby-doc.org/core-1.9.2/Object.html#method-i-define_singleton_method
 
