@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.homepage         = 'https://github.com/shuber/eigenclass'
   s.license          = 'MIT'
   s.name             = 'eigenclass'
-  s.rdoc_options     = %w(--charset=UTF-8 --inline-source --line-numbers --main README.rdoc)
+  s.rdoc_options     = %w(--charset=UTF-8 --inline-source --line-numbers --main README.md)
   s.require_paths    = %w(lib)
   s.summary          = 'Eigenclasses in ruby'
   s.test_files       = `git ls-files -- test/*`.split("\n")
