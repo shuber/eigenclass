@@ -97,7 +97,8 @@ Ruby is like one big plugin framework - with an awesome standard library and ama
 * [eattr_accessor](http://ruby-doc.org/core-1.9.3/Module.html#method-i-attr_accessor)
 * [eattr_reader](http://ruby-doc.org/core-1.9.3/Module.html#method-i-attr_reader)
 * [eattr_writer](http://ruby-doc.org/core-1.9.3/Module.html#method-i-attr_writer)
-* [edefine_method](http://ruby-doc.org/core-1.9.3/Module.html#method-i-define_method)
+* [edefine_method](http://ruby-doc.org/core-1.9.2/Object.html#method-i-define_singleton_method)
+* [eigenclass](http://ruby-doc.org/core-1.9.2/Object.html#method-i-singleton_class)
 * [eigenclass_eval](http://ruby-doc.org/core-1.9.3/BasicObject.html#method-i-instance_eval)
 * [eigenclass_exec](http://ruby-doc.org/core-1.9.3/BasicObject.html#method-i-instance_exec)
 
