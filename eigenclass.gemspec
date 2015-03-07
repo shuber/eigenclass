@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.rdoc_options     = %w(--charset=UTF-8 --inline-source --line-numbers --main README.md)
   s.require_paths    = %w(lib)
   s.summary          = 'Eigenclasses in ruby'
-  s.test_files       = `git ls-files -- test/*`.split("\n")
+  s.test_files       = `git ls-files -- spec/*`.split("\n")
   s.version          = Eigenclass::VERSION
 
   s.add_development_dependency 'codeclimate-test-reporter'
