@@ -52,27 +52,27 @@ Evaluating code within the context of an object's `eigenclass` allows us to do s
 
 ```ruby
 SomeObject.eigenclass_eval do
-  attr_accessor :testing
+  attr_accessor :example
 end
 
-SomeObject.testing = :example
-SomeObject.testing #=> :example
+SomeObject.example = :test
+SomeObject.example #=> :test
 ```
 
 The convenience methods for defining class level methods makes this even easier.
 
 ```ruby
 class SomeObject
-  eattr_accessor :test_accessor
-  eattr_reader :test_reader
-  eattr_writer :test_writer
+  eattr_accessor :example_accessor
+  eattr_reader :example_reader
+  eattr_writer :example_writer
 
-  edefine_method(:test_class_method) do
-    :test_define
+  edefine_method(:example_class_method) do
+    1 + 1
   end
 end
 
-SomeObject.test_class_method #=> :test_define
+SomeObject.example_class_method #=> 2
 ```
 
 Since all objects have an `eigenclass`, we can even define methods for a single _instance_ of a class.
@@ -80,8 +80,8 @@ Since all objects have an `eigenclass`, we can even define methods for a single 
 ```ruby
 object = SomeObject.new
 object.eattr_accessor :example
-object.example = "cool"
-object.example #=> cool
+object.example = :test
+object.example #=> :test
 
 other_object = SomeObject.new
 other_object.example #=> NoMethodError undefined method `example' for #<SomeObject:0x007fee348dde00>
