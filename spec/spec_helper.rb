@@ -3,7 +3,7 @@ if ENV['CODECLIMATE_REPO_TOKEN']
   CodeClimate::TestReporter.start
 else
   require 'simplecov'
-  SimpleCov.start { add_filter("/vendor/bundle/") }
+  SimpleCov.start { add_filter('/vendor/bundle/') }
 end
 
 require 'shoulda'
