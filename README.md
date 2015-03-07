@@ -87,7 +87,7 @@ other_object = SomeObject.new
 other_object.example #=> NoMethodError undefined method `example' for #<SomeObject:0x007fee348dde00>
 ```
 
-This is pretty incredible! We can hook in and inject behavior into any and all objects - *at runtime*!
+This is pretty incredible! We can hook in and inject behavior into any and all objects - **at runtime**!
 
 Ruby is like one big plugin framework - with an awesome standard library and amazing community!
 
