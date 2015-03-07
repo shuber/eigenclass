@@ -116,3 +116,8 @@ bundle exec rspec
 * Add tests for it. This is important so I don't break it in a future version unintentionally.
 * Commit, do not mess with Rakefile, version, or history. (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
+
+
+## License
+
+[MIT](https://github.com/shuber/eigenclass/blob/master/LICENSE)
