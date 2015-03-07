@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    eigenclass (2.0.1)
+    eigenclass (2.0.2)
 
 GEM
   remote: https://www.rubygems.org/
