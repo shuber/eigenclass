@@ -1,6 +1,8 @@
 require 'forwardable'
 require 'eigenclass/version'
 
+# Provides access to an object's {eigenclass} and defines
+# some convenient helper methods to interact with it.
 module Eigenclass
   extend Forwardable
 
@@ -11,6 +13,8 @@ module Eigenclass
   def_delegator :eigenclass, :instance_eval, :eigenclass_eval
   def_delegator :eigenclass, :instance_exec, :eigenclass_exec
 
+  # Alias of {Object#singleton_class}
+  # @see http://ruby-doc.org/core-1.9.2/Object.html#method-i-singleton_class
   def eigenclass
     class << self
       self
