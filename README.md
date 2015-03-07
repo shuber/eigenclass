@@ -94,6 +94,8 @@ Ruby is like one big plugin framework - with an awesome standard library and ama
 
 ## API
 
+[YARD Documentation](http://www.rubydoc.info/github/shuber/eigenclass/master)
+
 * [eattr_accessor](http://ruby-doc.org/core-1.9.3/Module.html#method-i-attr_accessor)
 * [eattr_reader](http://ruby-doc.org/core-1.9.3/Module.html#method-i-attr_reader)
 * [eattr_writer](http://ruby-doc.org/core-1.9.3/Module.html#method-i-attr_writer)
