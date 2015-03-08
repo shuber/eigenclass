@@ -87,10 +87,26 @@ other_object = SomeObject.new
 other_object.example #=> NoMethodError undefined method `example' for #<SomeObject:0x007fee348dde00>
 ```
 
-This is pretty incredible! We can hook in and inject behavior into any and all objects - **at runtime**!
+When we `extend` modules, we're actually just calling `include` on an object's `eigenclass`.
+
+```ruby
+module Example
+end
+
+SomeObject.eigenclass.included_modules #=> [Eigenclass, Kernel]
+SomeObject.extend(Example)
+SomeObject.eigenclass.included_modules #=> [Example, Eigenclass, Kernel]
+```
+
+A convenience method for viewing an objects extended modules is available for us as well.
+
+```ruby
+SomeObject.extended_modules #=> [Example, Eigenclass, Kernel]
+```
+
+This is pretty incredible! We can hook in and inject behavior into *any and all* objects - **at runtime**!
 
 Ruby is like one big plugin framework - with an awesome standard library and amazing community!
-
 
 ## API
 
@@ -103,6 +119,7 @@ Ruby is like one big plugin framework - with an awesome standard library and ama
 * [eigenclass](http://ruby-doc.org/core-1.9.2/Object.html#method-i-singleton_class)
 * [eigenclass_eval](http://ruby-doc.org/core-1.9.3/BasicObject.html#method-i-instance_eval)
 * [eigenclass_exec](http://ruby-doc.org/core-1.9.3/BasicObject.html#method-i-instance_exec)
+* [extended_modules](http://ruby-doc.org/core-1.9.3/Module.html#method-i-included_modules)
 
 
 ## Testing

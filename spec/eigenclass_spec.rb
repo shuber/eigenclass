@@ -19,6 +19,10 @@ RSpec.describe Eigenclass do
               .to(:eigenclass)
               .as(:define_method) }
 
+  it { should delegate_method(:extended_modules)
+              .to(:eigenclass)
+              .as(:included_modules) }
+
   describe '#eigenclass' do
     it 'should return the eigenclass instance' do
       expected = class << subject; self end
