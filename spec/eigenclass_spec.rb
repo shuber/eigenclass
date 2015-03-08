@@ -3,6 +3,10 @@ require_relative '../lib/eigenclass'
 RSpec.describe Eigenclass do
   subject { Object.new.extend(described_class) }
 
+  it { should delegate_method(:ealias_method)
+              .to(:eigenclass)
+              .as(:alias_method) }
+
   it { should delegate_method(:eattr_accessor)
               .to(:eigenclass)
               .as(:attr_accessor) }

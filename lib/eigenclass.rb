@@ -6,6 +6,7 @@ require 'eigenclass/version'
 module Eigenclass
   extend Forwardable
 
+  def_delegator :eigenclass, :alias_method, :ealias_method
   def_delegator :eigenclass, :attr_accessor, :eattr_accessor
   def_delegator :eigenclass, :attr_reader, :eattr_reader
   def_delegator :eigenclass, :attr_writer, :eattr_writer

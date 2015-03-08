@@ -66,6 +66,8 @@ class SomeObject
   eattr_reader :example_reader
   eattr_writer :example_writer
 
+  ealias_method :new_example_accessor, :example_accessor
+
   edefine_method(:example_class_method) do
     1 + 1
   end
@@ -113,6 +115,7 @@ Ruby is like one big plugin framework - with an awesome standard library and ama
 
 All methods defined by this gem are simple delegators to existing methods on the `eigenclass` object. The links below redirect to each corresponding method in the standard library documentation.
 
+* [ealias_method](http://ruby-doc.org/core-1.9.3/Module.html#method-i-alias_method)
 * [eattr_accessor](http://ruby-doc.org/core-1.9.3/Module.html#method-i-attr_accessor)
 * [eattr_reader](http://ruby-doc.org/core-1.9.3/Module.html#method-i-attr_reader)
 * [eattr_writer](http://ruby-doc.org/core-1.9.3/Module.html#method-i-attr_writer)
