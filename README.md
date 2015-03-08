@@ -48,7 +48,7 @@ class Object
 end
 ```
 
-Evaluating code within the context of an object's `eigenclass` allows us to do some pretty cool things - like defining class level attributes.
+Evaluating code within an `eigenclass` lets us do some cool things like defining class level attributes.
 
 ```ruby
 SomeObject.eigenclass_eval do
