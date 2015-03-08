@@ -75,18 +75,6 @@ end
 SomeObject.example_class_method #=> 2
 ```
 
-Since all objects have an `eigenclass`, we can even define methods for a single _instance_ of a class.
-
-```ruby
-object = SomeObject.new
-object.eattr_accessor :example
-object.example = :test
-object.example #=> :test
-
-other_object = SomeObject.new
-other_object.example #=> NoMethodError undefined method `example' for #<SomeObject:0x007fee348dde00>
-```
-
 When we `extend` modules, we're actually just calling `include` on an object's `eigenclass`.
 
 ```ruby
@@ -102,6 +90,18 @@ A convenience method for viewing an objects extended modules is available for us
 
 ```ruby
 SomeObject.extended_modules #=> [Example, Eigenclass, Kernel]
+```
+
+Since all objects have an `eigenclass`, we can even define methods for a single _instance_ of a class.
+
+```ruby
+object = SomeObject.new
+object.eattr_accessor :example
+object.example = :test
+object.example #=> :test
+
+other_object = SomeObject.new
+other_object.example #=> NoMethodError undefined method `example' for #<SomeObject:0x007fee348dde00>
 ```
 
 This is pretty incredible! We can hook in and inject behavior into *any and all* objects - **at runtime**!
