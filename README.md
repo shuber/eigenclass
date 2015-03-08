@@ -86,7 +86,7 @@ SomeObject.extend(Example)
 SomeObject.eigenclass.included_modules #=> [Example, Eigenclass, Kernel]
 ```
 
-A convenience method for viewing an objects extended modules is available for us as well.
+A convenience method for viewing an object's extended modules is available for us as well.
 
 ```ruby
 SomeObject.extended_modules #=> [Example, Eigenclass, Kernel]
@@ -111,6 +111,8 @@ Ruby is like one big plugin framework - with an awesome standard library and ama
 ## API
 
 [YARD Documentation](http://www.rubydoc.info/github/shuber/eigenclass/master)
+
+All methods defined by this gem are simple delegators to existing methods on the `eigenclass` object. The links below redirect to each corresponding method in the standard library documentation.
 
 * [eattr_accessor](http://ruby-doc.org/core-1.9.3/Module.html#method-i-attr_accessor)
 * [eattr_reader](http://ruby-doc.org/core-1.9.3/Module.html#method-i-attr_reader)
