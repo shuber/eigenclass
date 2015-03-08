@@ -26,8 +26,7 @@ gem install eigenclass
 Everything in Ruby is an object, including classes.
 
 ```ruby
-class SomeObject
-end
+SomeObject = Class.new
 ```
 
 Every object has an `eigenclass`.
@@ -78,11 +77,11 @@ SomeObject.example_class_method #=> 2
 When we `extend` modules, we're actually just calling `include` on an object's `eigenclass`.
 
 ```ruby
-module Example
-end
-
 SomeObject.eigenclass.included_modules #=> [Eigenclass, Kernel]
+
+Example = Module.new
 SomeObject.extend(Example)
+
 SomeObject.eigenclass.included_modules #=> [Example, Eigenclass, Kernel]
 ```
 
