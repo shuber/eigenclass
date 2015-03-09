@@ -1,4 +1,4 @@
-require_relative '../lib/eigenclass'
+require File.expand_path('../../lib/eigenclass', __FILE__)
 
 RSpec.describe Eigenclass do
   subject { Object.new.extend(described_class) }
