@@ -16,5 +16,4 @@ Gem::Specification.new do |s|
   s.version          = Eigenclass::VERSION
 
   s.add_development_dependency 'rspec'
-  s.add_development_dependency 'shoulda'
 end
