@@ -1,6 +1,6 @@
 # [![Sean Huber](https://cloud.githubusercontent.com/assets/2419/6550752/832d9a64-c5ea-11e4-9717-6f9aa6e023b5.png)](https://github.com/shuber) eigenclass
 
-[![Build Status](https://secure.travis-ci.org/shuber/eigenclass.png)](http://travis-ci.org/shuber/eigenclass) [![Code Climate](https://codeclimate.com/github/shuber/eigenclass/badges/gpa.svg)](https://codeclimate.com/github/shuber/eigenclass) [![Coverage](https://codeclimate.com/github/shuber/eigenclass/badges/coverage.svg)](https://codeclimate.com/github/shuber/eigenclass) [![Gem Version](https://badge.fury.io/rb/eigenclass.svg)](http://badge.fury.io/rb/eigenclass)
+[![Build Status](https://secure.travis-ci.org/shuber/eigenclass.svg)](http://travis-ci.org/shuber/eigenclass) [![Code Climate](https://codeclimate.com/github/shuber/eigenclass/badges/gpa.svg)](https://codeclimate.com/github/shuber/eigenclass) [![Coverage](https://codeclimate.com/github/shuber/eigenclass/badges/coverage.svg)](https://codeclimate.com/github/shuber/eigenclass) [![Gem Version](https://badge.fury.io/rb/eigenclass.svg)](http://badge.fury.io/rb/eigenclass)
 
 > Eigenclasses aka *metaclasses* or *singleton classes* in Ruby.
 
